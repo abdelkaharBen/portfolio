@@ -493,7 +493,7 @@ function Portfolio() {
                 </div>
                 <div className="method-info">
                   
-                  <p>abdouediter@gmail.com</p>
+                  <p>Abdelkahar.dev@gmail.com</p>
                 </div>
               </div>
               <div className="contact-method">

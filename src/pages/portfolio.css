@@ -377,57 +377,6 @@ nav ul li.active a::after {
   transform: scale(1.05);
 }
 
-.geometric-bg {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  right: -50px;
-  bottom: -50px;
-}
-
-.geometric-bg::before {
-  content: '';
-  position: absolute;
-  width: 200px;
-  height: 200px;
-  border: 4px solid var(--primary);
-  top: 30px;
-  right: 30px;
-  animation: rotate 20s linear infinite;
-}
-
-.geometric-bg::after {
-  content: '';
-  position: absolute;
-  width: 150px;
-  height: 150px;
-  background-color: var(--primary-light);
-  bottom: 20px;
-  left: 40px;
-  border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  animation: morph 15s linear infinite;
-}
-
-@keyframes rotate {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-@keyframes morph {
-  0%, 100% {
-    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-  }
-  25% {
-    border-radius: 70% 30% 30% 70% / 70% 70% 30% 30%;
-  }
-  50% {
-    border-radius: 30% 70% 70% 30% / 70% 30% 70% 30%;
-  }
-  75% {
-    border-radius: 70% 30% 30% 70% / 30% 70% 30% 70%;
-  }
-}
 
 .hero-bg {
   position: absolute;
