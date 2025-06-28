@@ -8,6 +8,7 @@ import p4 from '../assets/4.png';
 import p5 from '../assets/5.png';
 import p6 from '../assets/6.png';
 import p7 from '../assets/7.png';
+import p8 from '../assets/8.png';
 
 
 
@@ -334,7 +335,9 @@ function Portfolio() {
                   <span>Plugins</span>
                 </div>
               </div>
+              
             </div>
+            
 
 
 
@@ -445,14 +448,27 @@ function Portfolio() {
                   <span>Css</span>
                 </div>
               </div>
-
-
-
-       
-
-
-
               
+            </div>
+            <div className="project-card">
+              <div className="project-image">
+                 <img src={p8} alt="Project 8" />
+                <div className="project-overlay">
+                  <div className="project-links">
+
+                  </div>
+                </div>
+              </div>
+              <div className="project-info">
+                <h3>Tourism DZ</h3>
+                <p>Tourism Website of algeria with most visited states in country</p>
+                <div className="project-tags">
+                  <span>React</span>
+                  <span>Css</span>
+                  <span>Api</span>
+
+                </div>
+              </div>
             </div>
           </div>
           
