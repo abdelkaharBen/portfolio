@@ -9,6 +9,7 @@ import p5 from '../assets/5.png';
 import p6 from '../assets/6.png';
 import p7 from '../assets/7.png';
 import p8 from '../assets/8.png';
+import p9 from '../assets/9.png';
 
 
 
@@ -466,7 +467,30 @@ function Portfolio() {
                   <span>React</span>
                   <span>Css</span>
                   <span>Api</span>
+                  <span>Vite</span>
 
+                </div>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-image">
+                 <img src={p9} alt="Project 9" />
+                <div className="project-overlay">
+                  <div className="project-links">
+
+                  </div>
+                </div>
+              </div>
+              <div className="project-info">
+                <h3>Store App</h3>
+                <p>full store modern app with admin dashboard and Product&Category management and more of functionalities</p>
+                <div className="project-tags">
+                  <span>React</span>
+                  <span>Node.js</span>
+                  <span>Express Js</span>
+                  <span>MongoDB</span>
+                  <span>Restful Api</span>
+                  <span>Vite</span>
                 </div>
               </div>
             </div>
