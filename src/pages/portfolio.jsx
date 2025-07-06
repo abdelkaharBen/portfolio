@@ -505,13 +505,16 @@ function Portfolio() {
                 </div>
               </div>
               <div className="project-info">
-                <h3>Weather Dashboard</h3>
-                <p>Real-time weather application with location-based forecasts and interactive weather maps.</p>
+                <h3>JWS</h3>
+                <p>Clothing modern UI full stack App for JWS store with lot of functionalities </p>
                 <div className="project-tags">
                   <span>React</span>
-                  <span>Weather API</span>
-                  <span>CSS3</span>
-                  <span>Responsive</span>
+                  <span>Express js</span>
+                  <span>Vite</span>
+                  <span>MongoDB</span>
+                  <span>Node Js</span>
+                  <span>CSS</span>
+                  <span>RestAPI</span>
                 </div>
               </div>
             </div>
