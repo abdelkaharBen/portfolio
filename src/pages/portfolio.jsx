@@ -11,7 +11,7 @@ import p7 from '../assets/7.png';
 import p8 from '../assets/8.png';
 import p9 from '../assets/9.png';
 import p10 from '../assets/10.png';
-
+import p11 from '../assets/11.png';
 
 
 function Portfolio() {
@@ -515,6 +515,29 @@ function Portfolio() {
                   <span>Node Js</span>
                   <span>CSS</span>
                   <span>RestAPI</span>
+                </div>
+              </div>
+            </div>
+            <div className="project-card">
+              <div className="project-image">
+                 <img src={p11} alt="Project 11" />
+                <div className="project-overlay">
+                  <div className="project-links">
+
+                  </div>
+                </div>
+              </div>
+              <div className="project-info">
+                <h3>RamTech</h3>
+                <p>RamTech for browsing,  and purchasing the latest laptops with real-time inventory .</p>
+                <div className="project-tags">
+                  <span>React</span>
+                  <span>Vite</span>
+                  <span>Css</span>
+                  <span>Express js</span>
+                   <span>RestApi</span>
+                  <span>Node.js</span>
+                  <span>MySql</span>
                 </div>
               </div>
             </div>
