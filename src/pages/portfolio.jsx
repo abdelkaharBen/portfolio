@@ -483,7 +483,7 @@ function Portfolio() {
                 </div>
               </div>
               <div className="project-info">
-                <h3>Store App</h3>
+                <h3>Nairi Store</h3>
                 <p>full store modern app with admin dashboard and Product&Category management and more of functionalities</p>
                 <div className="project-tags">
                   <span>React</span>
@@ -511,14 +511,14 @@ function Portfolio() {
                   <span>React</span>
                   <span>Express js</span>
                   <span>Vite</span>
-                  <span>MongoDB</span>
+                  <span>MySql</span>
                   <span>Node Js</span>
                   <span>CSS</span>
                   <span>RestAPI</span>
                 </div>
               </div>
             </div>
-            <div className="project-card">
+            {/* <div className="project-card">
               <div className="project-image">
                  <img src={p11} alt="Project 11" />
                 <div className="project-overlay">
@@ -540,7 +540,7 @@ function Portfolio() {
                   <span>MySql</span>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
           
         </div>
