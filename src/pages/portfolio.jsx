@@ -12,6 +12,10 @@ import p8 from '../assets/8.png';
 import p9 from '../assets/9.png';
 import p10 from '../assets/10.png';
 import p11 from '../assets/11.png';
+import p12 from '../assets/12.png';
+import p13 from '../assets/13.png';
+import p14 from '../assets/14.png';
+import p15 from '../assets/p15.png';
 
 
 function Portfolio() {
@@ -299,7 +303,10 @@ function Portfolio() {
           <div className="underline"></div>
         </div>
         <div className="projects-content">
-          <div className="projects-grid">
+          {/* APP DEVELOPMENT SUBSECTION */}
+          <div className="project-subsection">
+            <h3 className="subsection-title">App Development</h3>
+            <div className="projects-grid">
             <div className="project-card">
               <div className="project-image">
                   <img src={p3} alt="Project 1" />
@@ -541,8 +548,80 @@ function Portfolio() {
                 </div>
               </div>
             </div> */}
+
+            <div className="project-card">
+              <div className="project-image">
+                 <img src={p12} alt="Project 12" />
+                <div className="project-overlay">
+                  <div className="project-links">
+
+                  </div>
+                </div>
+              </div>
+              <div className="project-info">
+                <h3>Freelancer Video Editor</h3>
+                <p>Portfolio of video editer freelancer</p>
+                <div className="project-tags">
+                  <span>React</span>
+                  <span>F-Motion</span>
+                  <span>Css</span>
+                  <span>RestApi</span>
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* APP DESIGN SUBSECTION */}
+          <div className="project-subsection app-design-section">
+            <h3 className="subsection-title">App Design</h3>
+            <div className="projects-grid">
+              <div className="project-card">
+                <div className="project-image">
+                   <img src={p13} alt="Web Design Project" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>Casa Food</h3>
+                  <p>Design of app for Casa Food </p>
+                </div>
+              </div>
+              <div className="project-card">
+                <div className="project-image">
+                   <img src={p14} alt="App Design Project" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>IMusic</h3>
+                  <p>Music App Design</p>
+                </div>
+              </div>
+              <div className="project-card">
+                <div className="project-image">
+                   <img src={p15} alt="App Design Project" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>Shoesy</h3>
+                  <p>App Design for Shoesy Store</p>
+                </div>
+              </div>
+            </div>
           </div>
           
+        </div>
         </div>
         <div className="projects-bg">
           <div className="grid-lines"></div>
