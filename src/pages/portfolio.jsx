@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import './portfolio.css';
+import SkillsMarquee from '../components/SkillsMarquee/SkillsMarquee';
 import profilePic from '../assets/me.jpg';
 import p1 from '../assets/1.png';
 import p2 from '../assets/2.png';
@@ -27,34 +28,34 @@ function Portfolio() {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + 200;
-      
+
       sections.current.forEach((section) => {
         if (!section) return;
-        
+
         const sectionTop = section.offsetTop;
         const sectionHeight = section.offsetHeight;
-        
+
         if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
           setActiveSection(section.id);
         }
-        
+
         // Check visibility for animation
         const rect = section.getBoundingClientRect();
-        const isCurrentlyVisible = 
+        const isCurrentlyVisible =
           rect.top <= (window.innerHeight || document.documentElement.clientHeight) &&
           rect.bottom >= 0;
-        
+
         setIsVisible(prev => ({
           ...prev,
           [section.id]: isCurrentlyVisible
         }));
       });
     };
-    
+
     sections.current = document.querySelectorAll('section');
     window.addEventListener('scroll', handleScroll);
     handleScroll(); // Check initial state
-    
+
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -113,7 +114,7 @@ function Portfolio() {
             <h1>
               <span className="greeting">Hello, I'm</span>
               <span className="name">AbdelKahar</span>
-              <span className="title">MERN Stack Developer</span>
+              <span className="title">Full-Stack Web & Mobile Developer</span>
             </h1>
             <p>Building impactful digital solutions with creative code</p>
             <div className="cta-buttons">
@@ -160,9 +161,9 @@ function Portfolio() {
           <div className="about-text">
             <h3>Who I Am</h3>
             <p>
-               I'm a skilled web and mobile developer with 3 years of experience building dynamic, user-centric applications. 
-               Specializing in modern frameworks and technologies, I create responsive, 
-               high-performance solutions with clean code and engaging designs. 
+              I'm a skilled web and mobile developer with 3 years of experience building dynamic, user-centric applications.
+              Specializing in modern frameworks and technologies, I create responsive,
+              high-performance solutions with clean code and engaging designs.
             </p>
             <h3>What I Do</h3>
             <div className="about-cards">
@@ -193,108 +194,7 @@ function Portfolio() {
         </div>
       </section>
 
-      {/* SKILLS SECTION */}
-      <section id="skills" className={`skills ${isVisible['skills'] ? 'visible' : ''}`}>
-        <div className="section-header">
-          <h2>My Skills</h2>
-          <div className="underline"></div>
-        </div>
-        <div className="skills-content">
-          <div className="skills-text">
-            <p>
-              I continuously enhance my skill set to stay current with the latest technologies
-              and development practices. Here are some of my core technical abilities:
-            </p>
-          </div>
-          <div className="skills-container">
-            <div className="skill-category">
-              <h3>Frontend</h3>
-              <div className="skill-items">
-                <div className="skill-item">
-                  <div className="skill-name">React</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '95%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-name">JavaScript</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '95%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-name">Tailwind</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '60%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-name">CSS</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '80%' }}></div>
-                  </div>
-                </div>
-                 <div className="skill-item">
-                  <div className="skill-name">HTML5</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '95%' }}></div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div className="skill-category">
-              <h3>Backend</h3>
-              <div className="skill-items">
-                <div className="skill-item">
-                  <div className="skill-name">Node.js</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '85%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-name">Express</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '83%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-name">MongoDB</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '95%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-name">Php</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '75%' }}></div>
-                  </div>
-                </div>
-                <div className="skill-item">
-                  <div className="skill-name">RestAPI</div>
-                  <div className="skill-bar">
-                    <div className="skill-level" style={{ width: '90%' }}></div>
-                  </div>
-                </div>
-              </div>
-
-
-
-
-
-
-
-
-              
-            </div>
-          </div>
-          <div className="floating-shapes">
-            <div className="shape shape-1"></div>
-            <div className="shape shape-2"></div>
-            <div className="shape shape-3"></div>
-            <div className="shape shape-4"></div>
-          </div>
-        </div>
-      </section>
+      <SkillsMarquee isVisible={isVisible['skills']} />
 
       {/* PROJECTS SECTION */}
       <section id="projects" className={`projects ${isVisible['projects'] ? 'visible' : ''}`}>
@@ -307,225 +207,225 @@ function Portfolio() {
           <div className="project-subsection">
             <h3 className="subsection-title">App Development</h3>
             <div className="projects-grid">
-            <div className="project-card">
-              <div className="project-image">
+              <div className="project-card">
+                <div className="project-image">
                   <img src={p3} alt="Project 1" />
-                <div className="project-overlay">
-                  <div className="project-links">
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>InnoDev Club</h3>
+                  <p>Our developer club's website showcases innovative projects, collaboration, and tech ideas.</p>
+                  <div className="project-tags">
+                    <span>React</span>
+                    <span>CSS</span>
+                    <span>API</span>
+                  </div>
+                </div>
+              </div>
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p5} alt="Project 1" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>Bibliotheque National Alger</h3>
+                  <p>WebSite of Bibliotheque National Alger with all infos and all categories</p>
+                  <div className="project-tags">
+                    <span>WordPress</span>
+                    <span>Php</span>
+                    <span>Plugins</span>
+                  </div>
+                </div>
+
+              </div>
+
+
+
+
+
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p7} alt="Project 1" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>Data Process</h3>
+                  <p>App for *** Company , about big Data process and commercial performance monitoring</p>
+                  <div className="project-tags">
+                    <span>React</span>
+                    <span>Express</span>
+                    <span>Node</span>
+                    <span>MongoDB</span>
+                    <span>Restful Api</span>
+                  </div>
+                </div>
+              </div>
+
+
+
+
+
+
+
+
+
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p4} alt="Project 1" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>CBG</h3>
+                  <p>Explore car brands, get personalized recommendations to choose wisely.</p>
+                  <div className="project-tags">
+                    <span>Javascript</span>
+                    <span>Css</span>
+                    <span>Html</span>
+                  </div>
+                </div>
+              </div>
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p2} alt="Project 1" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>Roles & Permissions </h3>
+                  <p>Dashboard for Roles & Permissions: Manage user access with secure, intuitive controls.</p>
+                  <div className="project-tags">
+                    <span>Laravel</span>
+                    <span>Bootstrap</span>
+                    <span>MySql</span>
+                  </div>
+                </div>
+              </div>
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p1} alt="Project 1" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>Ministère de l'enseignement supérieur</h3>
+                  <p>Ministry of higher education <br />and scientific research Website</p>
+                  <div className="project-tags">
+                    <span>Wordpress</span>
+                    <span>Plugins</span>
 
                   </div>
                 </div>
               </div>
-              <div className="project-info">
-                <h3>InnoDev Club</h3>
-                <p>Our developer club's website showcases innovative projects, collaboration, and tech ideas.</p>
-                <div className="project-tags">
-                  <span>React</span>
-                  <span>CSS</span>
-                  <span>API</span>
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p6} alt="Project 1" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
                 </div>
+                <div className="project-info">
+                  <h3>Animal Store</h3>
+                  <p>Web App of Animal Store App: Browse, order, and add new pets with ease.</p>
+                  <div className="project-tags">
+                    <span>Javascript</span>
+                    <span>Php</span>
+                    <span>MySql</span>
+                    <span>Css</span>
+                  </div>
+                </div>
+
               </div>
-            </div>
-            <div className="project-card">
-              <div className="project-image">
-                 <img src={p5} alt="Project 1" />
-                <div className="project-overlay">
-                  <div className="project-links">
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p8} alt="Project 8" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>Tourism DZ</h3>
+                  <p>Tourism Website of algeria with most visited states in country</p>
+                  <div className="project-tags">
+                    <span>React</span>
+                    <span>Css</span>
+                    <span>Api</span>
+                    <span>Vite</span>
 
                   </div>
                 </div>
               </div>
-              <div className="project-info">
-                <h3>Bibliotheque National Alger</h3>
-                <p>WebSite of Bibliotheque National Alger with all infos and all categories</p>
-                <div className="project-tags">
-                  <span>WordPress</span>
-                  <span>Php</span>
-                  <span>Plugins</span>
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p9} alt="Project 9" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
                 </div>
-              </div>
-              
-            </div>
-            
-
-
-
-
-<div className="project-card">
-              <div className="project-image">
-                 <img src={p7} alt="Project 1" />
-                <div className="project-overlay">
-                  <div className="project-links">
-
+                <div className="project-info">
+                  <h3>Nairi Store</h3>
+                  <p>full store modern app with admin dashboard and Product&Category management and more of functionalities</p>
+                  <div className="project-tags">
+                    <span>React</span>
+                    <span>Node.js</span>
+                    <span>Express Js</span>
+                    <span>MongoDB</span>
+                    <span>Restful Api</span>
+                    <span>Vite</span>
                   </div>
                 </div>
               </div>
-              <div className="project-info">
-                <h3>Data Process</h3>
-                <p>App for *** Company , about big Data process and commercial performance monitoring</p>
-                <div className="project-tags">
-                  <span>React</span>
-                  <span>Express</span>
-                  <span>Node</span>
-                  <span>MongoDB</span>
-                  <span>Restful Api</span>
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p10} alt="Project 10" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-
-
-
-
-
-
-
-
-
-            <div className="project-card">
-              <div className="project-image">
-                 <img src={p4} alt="Project 1" />
-                <div className="project-overlay">
-                  <div className="project-links">
-
+                <div className="project-info">
+                  <h3>JWS</h3>
+                  <p>Clothing modern UI full stack App for JWS store with lot of functionalities </p>
+                  <div className="project-tags">
+                    <span>React</span>
+                    <span>Express js</span>
+                    <span>Vite</span>
+                    <span>MySql</span>
+                    <span>Node Js</span>
+                    <span>CSS</span>
+                    <span>RestAPI</span>
                   </div>
                 </div>
               </div>
-              <div className="project-info">
-                <h3>CBG</h3>
-                <p>Explore car brands, get personalized recommendations to choose wisely.</p>
-                <div className="project-tags">
-                  <span>Javascript</span>
-                  <span>Css</span>
-                  <span>Html</span>
-                </div>
-              </div>
-            </div>
-                   <div className="project-card">
-              <div className="project-image">
-                 <img src={p2} alt="Project 1" />
-                <div className="project-overlay">
-                  <div className="project-links">
-
-                  </div>
-                </div>
-              </div>
-              <div className="project-info">
-                <h3>Roles & Permissions </h3>
-                <p>Dashboard for Roles & Permissions: Manage user access with secure, intuitive controls.</p>
-                <div className="project-tags">
-                  <span>Laravel</span>
-                  <span>Bootstrap</span>
-                  <span>MySql</span>
-                </div>
-              </div>
-            </div>
-                   <div className="project-card">
-              <div className="project-image">
-                 <img src={p1} alt="Project 1" />
-                <div className="project-overlay">
-                  <div className="project-links">
-
-                  </div>
-                </div>
-              </div>
-              <div className="project-info">
-                <h3>Ministère de l'enseignement supérieur</h3>
-                <p>Ministry of higher education <br/>and scientific research Website</p>
-                <div className="project-tags">
-                  <span>Wordpress</span>
-                  <span>Plugins</span>
-
-                </div>
-              </div>
-            </div>
-                   <div className="project-card">
-              <div className="project-image">
-                 <img src={p6} alt="Project 1" />
-                <div className="project-overlay">
-                  <div className="project-links">
-
-                  </div>
-                </div>
-              </div>
-              <div className="project-info">
-                <h3>Animal Store</h3>
-                <p>Web App of Animal Store App: Browse, order, and add new pets with ease.</p>
-                <div className="project-tags">
-                  <span>Javascript</span>
-                  <span>Php</span>
-                  <span>MySql</span>
-                  <span>Css</span>
-                </div>
-              </div>
-              
-            </div>
-            <div className="project-card">
-              <div className="project-image">
-                 <img src={p8} alt="Project 8" />
-                <div className="project-overlay">
-                  <div className="project-links">
-
-                  </div>
-                </div>
-              </div>
-              <div className="project-info">
-                <h3>Tourism DZ</h3>
-                <p>Tourism Website of algeria with most visited states in country</p>
-                <div className="project-tags">
-                  <span>React</span>
-                  <span>Css</span>
-                  <span>Api</span>
-                  <span>Vite</span>
-
-                </div>
-              </div>
-            </div>
-            <div className="project-card">
-              <div className="project-image">
-                 <img src={p9} alt="Project 9" />
-                <div className="project-overlay">
-                  <div className="project-links">
-
-                  </div>
-                </div>
-              </div>
-              <div className="project-info">
-                <h3>Nairi Store</h3>
-                <p>full store modern app with admin dashboard and Product&Category management and more of functionalities</p>
-                <div className="project-tags">
-                  <span>React</span>
-                  <span>Node.js</span>
-                  <span>Express Js</span>
-                  <span>MongoDB</span>
-                  <span>Restful Api</span>
-                  <span>Vite</span>
-                </div>
-              </div>
-            </div>
-            <div className="project-card">
-              <div className="project-image">
-                 <img src={p10} alt="Project 10" />
-                <div className="project-overlay">
-                  <div className="project-links">
-
-                  </div>
-                </div>
-              </div>
-              <div className="project-info">
-                <h3>JWS</h3>
-                <p>Clothing modern UI full stack App for JWS store with lot of functionalities </p>
-                <div className="project-tags">
-                  <span>React</span>
-                  <span>Express js</span>
-                  <span>Vite</span>
-                  <span>MySql</span>
-                  <span>Node Js</span>
-                  <span>CSS</span>
-                  <span>RestAPI</span>
-                </div>
-              </div>
-            </div>
-            {/* <div className="project-card">
+              {/* <div className="project-card">
               <div className="project-image">
                  <img src={p11} alt="Project 11" />
                 <div className="project-overlay">
@@ -549,79 +449,79 @@ function Portfolio() {
               </div>
             </div> */}
 
-            <div className="project-card">
-              <div className="project-image">
-                 <img src={p12} alt="Project 12" />
-                <div className="project-overlay">
-                  <div className="project-links">
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p12} alt="Project 12" />
+                  <div className="project-overlay">
+                    <div className="project-links">
 
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div className="project-info">
-                <h3>Freelancer Video Editor</h3>
-                <p>Portfolio of video editer freelancer</p>
-                <div className="project-tags">
-                  <span>React</span>
-                  <span>F-Motion</span>
-                  <span>Css</span>
-                  <span>RestApi</span>
+                <div className="project-info">
+                  <h3>Freelancer Video Editor</h3>
+                  <p>Portfolio of video editer freelancer</p>
+                  <div className="project-tags">
+                    <span>React</span>
+                    <span>F-Motion</span>
+                    <span>Css</span>
+                    <span>RestApi</span>
 
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          {/* APP DESIGN SUBSECTION */}
-          <div className="project-subsection app-design-section">
-            <h3 className="subsection-title">App Design</h3>
-            <div className="projects-grid">
-              <div className="project-card">
-                <div className="project-image">
-                   <img src={p13} alt="Web Design Project" />
-                  <div className="project-overlay">
-                    <div className="project-links">
+            {/* APP DESIGN SUBSECTION */}
+            <div className="project-subsection app-design-section">
+              <h3 className="subsection-title">App Design</h3>
+              <div className="projects-grid">
+                <div className="project-card">
+                  <div className="project-image">
+                    <img src={p13} alt="Web Design Project" />
+                    <div className="project-overlay">
+                      <div className="project-links">
 
+                      </div>
                     </div>
                   </div>
-                </div>
-                <div className="project-info">
-                  <h3>Casa Food</h3>
-                  <p>Design of app for Casa Food </p>
-                </div>
-              </div>
-              <div className="project-card">
-                <div className="project-image">
-                   <img src={p14} alt="App Design Project" />
-                  <div className="project-overlay">
-                    <div className="project-links">
-
-                    </div>
+                  <div className="project-info">
+                    <h3>Casa Food</h3>
+                    <p>Design of app for Casa Food </p>
                   </div>
                 </div>
-                <div className="project-info">
-                  <h3>IMusic</h3>
-                  <p>Music App Design</p>
-                </div>
-              </div>
-              <div className="project-card">
-                <div className="project-image">
-                   <img src={p15} alt="App Design Project" />
-                  <div className="project-overlay">
-                    <div className="project-links">
+                <div className="project-card">
+                  <div className="project-image">
+                    <img src={p14} alt="App Design Project" />
+                    <div className="project-overlay">
+                      <div className="project-links">
 
+                      </div>
                     </div>
                   </div>
+                  <div className="project-info">
+                    <h3>IMusic</h3>
+                    <p>Music App Design</p>
+                  </div>
                 </div>
-                <div className="project-info">
-                  <h3>Shoesy</h3>
-                  <p>App Design for Shoesy Store</p>
+                <div className="project-card">
+                  <div className="project-image">
+                    <img src={p15} alt="App Design Project" />
+                    <div className="project-overlay">
+                      <div className="project-links">
+
+                      </div>
+                    </div>
+                  </div>
+                  <div className="project-info">
+                    <h3>Shoesy</h3>
+                    <p>App Design for Shoesy Store</p>
+                  </div>
                 </div>
               </div>
             </div>
+
           </div>
-          
-        </div>
         </div>
         <div className="projects-bg">
           <div className="grid-lines"></div>
@@ -646,7 +546,7 @@ function Portfolio() {
                   </svg>
                 </div>
                 <div className="method-info">
-          
+
                   <p>+213-657605130</p>
                 </div>
               </div>
@@ -658,7 +558,7 @@ function Portfolio() {
                   </svg>
                 </div>
                 <div className="method-info">
-                  
+
                   <p>Abdelkahar.dev@gmail.com</p>
                 </div>
               </div>
@@ -694,7 +594,7 @@ function Portfolio() {
                   <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
                 </svg>
               </a>
-              
+
             </div>
           </div>
           <div className="contact-form">
