@@ -17,6 +17,7 @@ import p12 from '../assets/12.png';
 import p13 from '../assets/13.png';
 import p14 from '../assets/14.png';
 import p15 from '../assets/p15.png';
+import p16 from '../assets/16.png';
 
 
 function Portfolio() {
@@ -467,6 +468,30 @@ function Portfolio() {
                     <span>Css</span>
                     <span>RestApi</span>
 
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p16} alt="Project 16" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>Wahid Barbershop</h3>
+                  <p>Premium barbershop Web Application page with luxury UI and booking integration.</p>
+                  <div className="project-tags">
+                    <span>React</span>
+                    <span>CSS</span>
+                    <span>Vite</span>
+                    <span>Node Js</span>
+                    <span>Mysql</span>
+                    <span>Express</span>
+                    <span>F-Motion</span>
+                    <span>RestApi</span>
                   </div>
                 </div>
               </div>
