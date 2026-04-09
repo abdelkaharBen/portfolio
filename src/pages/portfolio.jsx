@@ -115,7 +115,7 @@ function Portfolio() {
             <h1>
               <span className="greeting">Hello, I'm</span>
               <span className="name">AbdelKahar</span>
-              <span className="title">Full-Stack Web & Mobile Developer</span>
+              <span className="title">Full-Stack Software Developer</span>
             </h1>
             <p>Building impactful digital solutions with creative code</p>
             <div className="cta-buttons">

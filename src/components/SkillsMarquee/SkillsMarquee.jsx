@@ -11,6 +11,8 @@ const skillsRow1 = [
     { name: 'Firebase', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg' },
     { name: 'Tailwind CSS', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg' },
     { name: 'Git', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
+    { name: 'Electron.js', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg' },
+    { name: 'UML', icon: 'https://upload.wikimedia.org/wikipedia/commons/d/d5/UML_logo.svg' },
 ];
 
 const skillsRow2 = [
@@ -22,6 +24,7 @@ const skillsRow2 = [
     { name: 'WordPress', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/wordpress/wordpress-plain.svg' },
     { name: 'Supabase', icon: 'https://www.vectorlogo.zone/logos/supabase/supabase-icon.svg' },
     { name: 'Refine.js', icon: 'https://refine.dev/img/refine_logo.png' },
+    { name: 'SQLite', icon: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg' },
 ];
 
 const SkillsMarquee = ({ isVisible }) => {
