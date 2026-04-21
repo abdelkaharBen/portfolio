@@ -349,13 +349,16 @@ function Portfolio() {
                   </div>
                 </div>
                 <div className="project-info">
-                  <h3>Animal Store</h3>
-                  <p>Web App of Animal Store App: Browse, order, and add new pets with ease.</p>
+                  <h3>Sweet House WT</h3>
+                  <p>Web App of SweetHouse With Modern UI and Full Functionalities </p>
                   <div className="project-tags">
-                    <span>Javascript</span>
-                    <span>Php</span>
+                    <span>React js</span>
+                    <span>Express js</span>
+                    <span>Node js</span>
                     <span>MySql</span>
                     <span>Css</span>
+                    <span>F-motion</span>
+                    <span>Restful Api</span>
                   </div>
                 </div>
 
