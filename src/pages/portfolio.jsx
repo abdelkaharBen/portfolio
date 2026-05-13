@@ -18,6 +18,7 @@ import p13 from '../assets/13.png';
 import p14 from '../assets/14.png';
 import p15 from '../assets/p15.png';
 import p16 from '../assets/16.png';
+import p17 from '../assets/17.png';
 
 
 function Portfolio() {
@@ -495,6 +496,30 @@ function Portfolio() {
                     <span>Express</span>
                     <span>F-Motion</span>
                     <span>RestApi</span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="project-card">
+                <div className="project-image">
+                  <img src={p17} alt="Project 17" />
+                  <div className="project-overlay">
+                    <div className="project-links">
+                    </div>
+                  </div>
+                </div>
+                <div className="project-info">
+                  <h3>NEDJM EXPERTISE & CONSEIL</h3>
+                  <p>Full Web Application for automotive expertise and consulting office with Client & Office side </p>
+                  <div className="project-tags">
+                    <span>React</span>
+                    <span>Vite</span>
+                    <span>Css</span>
+                    <span>Express Js</span>
+                    <span>Node Js</span>
+                    <span>Mysql</span>
+                    <span>RestAPI</span>
+                    <span>F-Motion</span>
                   </div>
                 </div>
               </div>
